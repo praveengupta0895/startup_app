@@ -1,0 +1,40 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  dev:
+    app:
+      name: "Dev App"
+
+    android:
+      applicationId: "com.dartknightrises.startupapp.startup_app.dev"
+#    ios:
+#      bundleId: "com.dartKnightRises.startupApp.dev"
+#    macos:
+#      bundleId: "com.dartKnightRises.startupApp.dev"
+
+  staging:
+    app:
+      name: "Staging App"
+
+    android:
+      applicationId: "com.dartknightrises.startupapp.startup_app.staging"
+#    ios:
+#      bundleId: "com.dartKnightRises.startupApp.staging"
+#    macos:
+#      bundleId: "com.dartKnightRises.startupApp.staging"
+
+
+  prod:
+    app:
+      name: "Prod App"
+
+    android:
+      applicationId: "com.dartknightrises.startupapp.startup_app.prod"
+#    ios:
+#      bundleId: "com.dartKnightRises.startupApp.prod"
+#    macos:
+#      bundleId: "com.dartKnightRises.startupApp.prod"
+
+ide: idea

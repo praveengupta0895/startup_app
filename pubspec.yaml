@@ -13,10 +13,10 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
+  flutter_flavorizr: ^2.2.3
   google_fonts: ^6.1.0
   get: ^4.6.6
   shared_preferences: ^2.2.2
-  flutter_animate: ^4.5.0
   flutter_native_splash: ^2.3.10
   equatable: ^2.0.5
   internet_connection_checker: ^1.0.0+1
@@ -28,9 +28,31 @@ dev_dependencies:
 
   flutter_lints: ^3.0.0
 
-
 flutter:
-
-
   uses-material-design: true
 
+#android:
+#  flavorDimensions: "environment"
+#  productFlavors:
+#    dev:
+#      dimension: "environment"
+#      applicationId: "com.dartKnightRises.startupApp.dev"
+#      # Add any other Android-specific configurations here
+#    staging:
+#      dimension: "environment"
+#      applicationId: "com.dartKnightRises.startupApp.staging"
+#      # Add any other Android-specific configurations here
+#    prod:
+#      dimension: "environment"
+#      applicationId: "com.dartKnightRises.startupApp.prod"
+#      # Add any other Android-specific configurations here
+#
+#ios:
+#  flavorDimensions: "environment"
+#  target:
+#    'dev':
+#    # Add any iOS-specific configurations here
+#    'staging':
+#    # Add any iOS-specific configurations here
+#    'prod':
+#    # Add any iOS-specific configurations here

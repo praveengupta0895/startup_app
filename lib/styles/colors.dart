@@ -20,7 +20,7 @@ class AppColors {
 
 
 
-  final bool isDark = false;
+  // final bool isDark = false;
 
   ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
