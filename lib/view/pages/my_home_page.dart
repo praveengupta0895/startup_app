@@ -1,5 +1,5 @@
-
 import '../../common_libs.dart';
+import '../../controller/logic/app_logic.dart';
 import '../../flavors.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -7,15 +7,22 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(F.title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello ${F.title}',
-        ),
-      ),
-    );
+    final AppLogic appLogic = Get.find();
+    return Obx(() => appLogic.isInternetConnected.value
+        ? Scaffold(
+            appBar: AppBar(
+              title: Text(F.title),
+            ),
+            body: Center(
+              child: Text(
+                'Hello ${F.title}',
+              ),
+            ),
+          )
+        : const Scaffold(
+            body: Center(
+              child: Text('No internet connection'),
+            ),
+          ));
   }
 }
