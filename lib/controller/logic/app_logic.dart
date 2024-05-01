@@ -1,9 +1,12 @@
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+
 import 'common/platform_info.dart';
 import 'package:startup_app/common_libs.dart';
 
 class AppLogic extends GetxController{
 
   RxBool isBootstrapComplete = RxBool(false);
+  RxBool isInternetConnected = RxBool(false);
 
   Size get deviceSize {
     final w = WidgetsBinding.instance.platformDispatcher.views.first;
@@ -25,9 +28,21 @@ class AppLogic extends GetxController{
     await Future.delayed(const Duration(seconds: 1));
     debugPrint('go!');
     isBootstrapComplete.value = true;
+    await _checkInternetConnection();
+    _startInternetConnectionListener();
     debugPrint('bootstrap completed');
   }
   void _handleFlutterError(FlutterErrorDetails details) {
     FlutterError.dumpErrorToConsole(details);
+  }
+  Future<void> _checkInternetConnection() async {
+    final hasConnection = await InternetConnectionChecker().hasConnection;
+    isInternetConnected.value = hasConnection;
+  }
+
+  void _startInternetConnectionListener() {
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      isInternetConnected.value = status == InternetConnectionStatus.connected;
+    });
   }
 }

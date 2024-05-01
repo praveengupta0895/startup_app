@@ -8,7 +8,8 @@ FutureOr<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   AppLogic appLogic = Get.put(AppLogic());
-  runApp(const App());
   await appLogic.bootstrap();
+  runApp(const App());
+
   FlutterNativeSplash.remove();
 }
