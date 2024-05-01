@@ -6,7 +6,7 @@ This application serves as an excellent starting point for developing mid-level 
 
 ### Installation
 
-To get started with the start_up_app app:
+To get started with the start_up app:
 
 1. Clone the repository:
 
